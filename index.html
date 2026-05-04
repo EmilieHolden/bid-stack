@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic+Expanded+One&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/9cf112f2f4.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BidStack</title>
+  </head>
+  <body class="flex min-h-dvh flex-col bg-black font-sans text-white">
+    <header
+      class="border-light-grey relative border-b-[0.5px] bg-black text-white"
+    >
+      <nav class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <h1 class="font-heading text-neon-green text-2xl font-bold">
+            BidStack
+          </h1>
+          <ul class="hidden items-center gap-6 md:flex">
+            <li><a href="/" class="hover:underline">Home</a></li>
+            <li>
+              <a href="/listings" class="hover:underline">View listings</a>
+            </li>
+            <li><a href="/login" class="hover:underline">Login</a></li>
+          </ul>
+          <button
+            id="menu-btn"
+            class="z-50 text-sm text-white focus:outline-none md:hidden"
+          >
+            <i id="menu-icon" class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+      <ul
+        id="menu"
+        class="text-light-grey border-light-grey absolute top-full left-0 z-40 hidden w-full flex-col border-b-[0.5px] bg-black p-2 md:hidden"
+      >
+        <p class="text-light-green text-right">$1000</p>
+        <div class="pb-4 text-center">
+          <li>
+            <a href="/" class="block hover:underline">Home</a>
+          </li>
+          <li>
+            <a href="/listings" class="block hover:underline">Listings</a>
+          </li>
+          <li>
+            <a href="/non-existent-page" class="block hover:underline"
+              >Page not found</a
+            >
+          </li>
+        </div>
+        <div class="flex flex-row justify-between">
+          <button class="btn">Add listing</button>
+          <div class="flex flex-row gap-2">
+            <button class="btn">Login</button
+            ><button class="btn-secondary">Register</button>
+          </div>
+        </div>
+      </ul>
+    </header>
+
+    <main class="flex-grow" id="app"></main>
+    <footer
+      class="text-light-grey border-light-grey flex justify-between border-t-[0.5px] px-4 pt-6 pb-8"
+    >
+      <div class="flex flex-col gap-1">
+        <a href="/">Home</a>
+        <a href="">My profile</a>
+        <a href=""></a>View all listings
+      </div>
+      <div class="flex flex-col gap-1">
+        <p>About us</p>
+        <p>Contact us</p>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-square-instagram"></i>
+      </div>
+    </footer>
+    <script type="module" src="/src/js/script.js"></script>
+  </body>
+</html>

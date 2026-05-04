@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Special Gothic Expanded One", sans-serif;
+
+  --color-neon-green: #96d546;
+  --color-light-green: #b3e472;
+  --color-ultralight-green: #d2f0a6;
+
+  --color-dark-purple: #8474df;
+  --color-light-purple: #b5abec;
+
+  --color-dark-grey: #585858;
+  --color-light-grey: #9b9b9b;
+
+  --color-alert-red: #b80d11;
+  --color-success-green: #5b951b;
+}
+
+@layer base {
+  button {
+    color: white;
+    padding: 4px 10px;
+  }
+
+  .btn {
+    display: flex;
+    width: fit-content;
+    align-items: flex-start;
+    gap: 12px;
+
+    border-radius: 5px;
+    border: 1px solid #8474df;
+  }
+
+  .btn-secondary {
+    display: flex;
+    align-items: flex-start;
+    padding: 8px 12px;
+
+    border-radius: 5px;
+    background: #8474df;
+  }
+
+  .listing-card {
+    display: flex;
+
+    align-items: flex-start;
+    align-self: stretch;
+
+    border-radius: 5px;
+    background: #121212;
+  }
+
+  .input,
+  select {
+    padding: 8px 12px;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 5px;
+    border: 0.5px solid var(--color-light-grey);
+  }
+}

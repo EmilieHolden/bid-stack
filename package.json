@@ -1,0 +1,47 @@
+{
+  "name": "bid-stack",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tailwind": "tailwindcss -i ./css/input.css -o ./css/style.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "prettier": "^3.8.3",
+    "prettier-plugin-tailwindcss": "^0.0.0-insiders.f7d2598",
+    "tailwindcss": "^4.2.4",
+    "vite": "^8.0.10"
+  },
+  "description": "Semester Project 2 at Noroff. Building a front-end auction application.",
+  "main": "index.js",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.2.4",
+    "detect-libc": "^2.1.2",
+    "fdir": "^6.5.0",
+    "fsevents": "^2.3.3",
+    "lightningcss": "^1.32.0",
+    "lightningcss-darwin-arm64": "^1.32.0",
+    "nanoid": "^3.3.11",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.4",
+    "postcss": "^8.5.10",
+    "rolldown": "^1.0.0-rc.17",
+    "source-map-js": "^1.2.1",
+    "tinyglobby": "^0.2.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmilieHolden/bid-stack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmilieHolden/bid-stack/issues"
+  },
+  "homepage": "https://github.com/EmilieHolden/bid-stack#readme"
+}
