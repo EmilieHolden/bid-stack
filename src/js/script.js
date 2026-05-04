@@ -1,6 +1,0 @@
-import "./components/mobile-menu.js"
-import "./main.js"
-import "./api/index.js"
-import "./api/login.js"
-import "./api/register.js"
-import "./components/toggle-register-login.js"

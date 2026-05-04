@@ -1,5 +1,9 @@
 import { Router } from './router.js';
 import { routes } from './routes.js';
+import "./components/mobile-menu.js"
+import "./api/index.js"
+import "./api/login.js"
+import "./api/register.js"
 
 const contentElement = document.getElementById('app');
 const router = new Router(routes, contentElement);
