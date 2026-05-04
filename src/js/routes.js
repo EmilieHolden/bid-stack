@@ -1,4 +1,4 @@
-import { homeView, listingsView, loginView } from './views.js';
+import { homeView, listingsView, loginView } from "./views/index.js";
 
 export const routes = {
     '/': homeView,

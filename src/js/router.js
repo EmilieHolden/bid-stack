@@ -1,4 +1,5 @@
-import { notFoundView } from './views.js';
+import { setupAuthToggle } from './components/authToggle.js';
+import { notFoundView } from './views/index.js';
 
 export class Router {
     constructor(routes, contentElement) {
@@ -17,5 +18,9 @@ export class Router {
         const path = window.location.pathname;
         const view = this.routes[path] || notFoundView;
         this.contentElement.innerHTML = view();
+
+        if (path === "/login") {
+            setupAuthToggle();
+        }
     }
 }
