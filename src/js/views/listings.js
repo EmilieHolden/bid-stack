@@ -1,3 +1,9 @@
 export function listingsView() {
-    return '<main class="mx-auto w-full max-w-lg"><h1>Listings</h1><div class="listing-card" > <div class="w-full"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Phoenicopterus_ruber_in_S%C3%A3o_Paulo_Zoo.jpg" alt=""></div><div class="flex flex-col py-2 px-3 w-full"><div><p class="text-sm text-white font-heading">Flamingo picture</p></div> <p class="text-xs text-light-grey">Short description of product</p><div><p class="text-xs text-light-grey">Current bid</p><p class="text-xl text-white">300$</p><p class="text-xs text-light-grey">Ends in 2 days</p></div><button class="btn w-full text-center">View product</button></div > </div></main>';
+    return `
+      <main class="mx-auto w-full max-w-lg">
+        <h1>Listings</h1>
+  
+        <div id="listings-container" class="flex flex-col gap-2"></div>
+      </main>
+    `;
 }
