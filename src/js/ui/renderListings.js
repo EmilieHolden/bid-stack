@@ -1,9 +1,14 @@
 export function renderListings(listings) {
   const container = document.getElementById("listings-container");
 
-  if (!container) return;
+  if (!container) return
 
-  container.innerHTML = "";
+  container.innerHTML = ""
+
+  if (listings.length === 0) {
+    container.innerHTML = `<p class="text-light-grey">No listings found.</p>`
+    return
+  }
 
   listings.forEach((listing) => {
 
