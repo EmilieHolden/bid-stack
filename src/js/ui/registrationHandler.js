@@ -2,7 +2,7 @@ import { registerUser } from "../api/register";
 
 export function setupRegistrationHandler() {
     const registerForm = document.getElementById("register-form");
-    const messageContainer = document.getElementById("message-container");
+    const messageContainer = document.getElementById("register-message");
 
     if (!registerForm) return;
 
@@ -24,7 +24,7 @@ export function setupRegistrationHandler() {
             messageContainer.textContent = "Registration successfull. You can now log in."; //må få den til å vises en plass
 
         } catch (error) {
-            messageContainer.textContent = "Registration failed.";
+            messageContainer.textContent = error.message;
         }
     });
 }

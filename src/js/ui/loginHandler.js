@@ -2,7 +2,7 @@ import { loginUser } from "../api/login.js";
 
 export function setupLoginHandler() {
     const loginForm = document.getElementById("login-form");
-    const messageContainer = document.getElementById("message-container");
+    const messageContainer = document.getElementById("login-message");
 
     if (!loginForm) return;
 
@@ -22,7 +22,8 @@ export function setupLoginHandler() {
             localStorage.setItem("token", user.accessToken);
             localStorage.setItem("user", JSON.stringify(user));
 
-            window.location.href = "/listings";
+            history.pushState({}, "", "/listings");
+            window.dispatchEvent(new PopStateEvent("popstate"));
         } catch (error) {
             messageContainer.textContent = error.message;
         }

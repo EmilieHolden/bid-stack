@@ -1,5 +1,5 @@
 export function loginForm() {
-    return `
+  return `
       <div id="login-form-wrapper" class="hidden">
         <h2 class="mb-3 text-xl font-bold font-heading">Login</h2>
   
@@ -14,7 +14,7 @@ export function loginForm() {
             <input type="password" id="login-password" name="password" minlength="8" required class="input"/>
           </div>
          
-          <p id="message-container" class="text-sm text-alert-red"></p>
+          <p id="login-message" class="text-sm text-white"></p>
 
           <button type="submit" class="btn-secondary">Login</button>
         </form>

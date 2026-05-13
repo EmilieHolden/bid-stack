@@ -1,5 +1,5 @@
 export function registerForm() {
-    return `
+  return `
       <div id="register-form-wrapper">
         <h2 class="mb-3 text-xl text-white font-bold font-heading">Register account</h2>
   
@@ -18,6 +18,8 @@ export function registerForm() {
             <label for="register-password">Password</label>
             <input type="text" id="register-password" name="password" minlength="8" required class="input"/>
           </div>
+
+          <p id="register-message" class="text-alert-red text-sm"></p>
   
           <button type="submit" class="btn-secondary">Create account</button>
         </form>
