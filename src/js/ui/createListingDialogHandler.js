@@ -1,5 +1,6 @@
 import { createListingDialog } from "../components/createListingDialog.js";
 import { createListing } from "../api/createListing.js";
+import { userFeedbackMessage } from "../components/userFeedbackMessage.js";
 
 export function setupCreateListingDialog() {
     if (!document.getElementById("create-listing-dialog")) {
@@ -8,7 +9,7 @@ export function setupCreateListingDialog() {
 
     const dialog = document.getElementById("create-listing-dialog");
     const form = document.getElementById("create-listing-form");
-    const message = document.getElementById("create-listing-message");
+    const messageContainer = document.getElementById("create-listing-message");
     const closeBtn = document.getElementById("close-create-listing");
     const openButtons = document.querySelectorAll(".open-create-listing");
 
@@ -55,7 +56,10 @@ export function setupCreateListingDialog() {
             history.pushState({}, "", "/listings");
             window.dispatchEvent(new PopStateEvent("popstate"));
         } catch (error) {
-            message.textContent = error.message;
+            messageContainer.innerHTML = userFeedbackMessage(
+                "error",
+                error.message
+            );
         }
     });
 }
