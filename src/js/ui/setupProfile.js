@@ -11,6 +11,14 @@ export const setupProfile = async () => {
     const user = JSON.parse(localStorage.getItem("user"))
     const ownName = user?.name
 
+    const token = localStorage.getItem("token")
+
+    if (!token) {
+        history.pushState({}, "", "/login")
+        window.dispatchEvent(new PopStateEvent("popstate"))
+        return
+    }
+
     const profileName = queryName || ownName
 
     if (!profileName) return
