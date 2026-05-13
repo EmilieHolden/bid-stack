@@ -1,5 +1,7 @@
 import { createBid } from "../api/createBid";
 import { setupListing } from "./setupListing";
+import { getProfile } from "../api/getProfile.js";
+import { setupAuthNav } from "./authNav.js";
 
 export const setupBidHandler = (listingId) => {
     const bidForm = document.getElementById("bid-form")
@@ -15,6 +17,20 @@ export const setupBidHandler = (listingId) => {
 
         try {
             await createBid(listingId, amount)
+
+            const user = JSON.parse(localStorage.getItem("user"))
+
+            const updatedCredit = await getProfile(user.name)
+
+            localStorage.setItem(
+                "user",
+                JSON.stringify({
+                    ...user,
+                    ...updatedCredit,
+                })
+            )
+
+            setupAuthNav()
 
             bidForm.reset()
 
