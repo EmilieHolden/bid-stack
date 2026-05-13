@@ -16,7 +16,7 @@ export function registerForm() {
   
           <div class="flex flex-col">
             <label for="register-password">Password</label>
-            <input type="text" id="register-password" name="password" minlength="8" required class="input"/>
+            <input type="password" id="register-password" name="password" minlength="8" required class="input"/>
           </div>
 
           <p id="register-message" class="text-alert-red text-sm"></p>
