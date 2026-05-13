@@ -19,7 +19,12 @@ export function registerForm() {
             <input type="password" id="register-password" name="password" minlength="8" required class="input"/>
           </div>
 
-          <p id="register-message" class="text-alert-red text-sm"></p>
+          <div class="flex flex-col">
+            <label for="banner">Banner URL</label>
+            <input type="url" id="banner" name="banner" class="input"/>
+          </div>
+
+          <div id="register-message"></div>
   
           <button type="submit" class="btn-secondary">Create account</button>
         </form>
