@@ -16,6 +16,15 @@ export function listingsView() {
           class="input w-full"
         />
       </form>
+      <div class="mb-6">
+  <label for="sort-select" class="sr-only">Sort listings</label>
+
+  <select id="sort-select" class="input w-full">
+    <option value="newest">Newest</option>
+    <option value="ending-soon">Ending soon</option>
+    <option value="highest-bid">Highest bid</option>
+  </select>
+</div>
         <div id="listings-container" class="flex flex-col gap-2"></div>
       </main>
     `;
