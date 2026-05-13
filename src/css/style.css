@@ -422,11 +422,21 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 0.5px;
   }
+  .border-solid {
+    --tw-border-style: solid;
+    border-style: solid;
+  }
+  .border-alert-red {
+    border-color: var(--color-alert-red);
+  }
   .border-black {
     border-color: var(--color-black);
   }
   .border-light-grey {
     border-color: var(--color-light-grey);
+  }
+  .border-neon-green {
+    border-color: var(--color-neon-green);
   }
   .bg-black {
     background-color: var(--color-black);
