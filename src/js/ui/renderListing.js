@@ -5,6 +5,8 @@ export const renderListing = (listing) => {
 
   if (!container) return;
 
+  const token = localStorage.getItem("token")
+
   const imageUrl = listing.media?.[0]?.url || "https://placehold.co/600x400"
   const imageAlt = listing.media?.[0]?.alt || listing.title
 
@@ -65,11 +67,28 @@ export const renderListing = (listing) => {
           <div class="flex flex-col gap-3">${bidsHtml}</div>
           </div>
         </div>
-        <form id="bid-form" class="mt-6 flex gap-2">
-         <input type="number" name="amount" required class="input flex-1" placeholder="Your bid"/>
-         <button type="submit" class="btn">Place bid</button>
-        </form>
-        <p id="bid-message" class="text-sm text-alert-red"></p>
+        ${token
+      ? `
+              <form id="bid-form" class="mt-6 flex gap-2">
+                <input
+                  type="number"
+                  name="amount"
+                  min="${highestBid + 1}"
+                  required
+                  class="input flex-1"
+                  placeholder="Minimum bid: ${highestBid + 1}$"
+                />
+                <button type="submit" class="btn">Place bid</button>
+              </form>
+        
+              <p id="bid-message" class="text-sm text-alert-red"></p>
+            `
+      : `
+              <p class="text-light-grey mt-6 text-sm">
+                Log in to place a bid.
+              </p>
+            `
+    }
       </section>
     `
 }
