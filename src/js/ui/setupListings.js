@@ -15,9 +15,16 @@ export const setupListings = async () => {
             const searchValue = event.target.value.toLowerCase()
 
             const filteredListings = listings.filter((listing) => {
+                const title = listing.title?.toLowerCase() || ""
+                const description = listing.description?.toLowerCase() || ""
+                const seller = listing.seller?.name?.toLowerCase() || ""
+                const tags = listing.tags?.join(" ").toLowerCase() || ""
+
                 return (
-                    listing.title.toLowerCase().includes(searchValue) ||
-                    listing.description?.toLowerCase().includes(searchValue)
+                    title.includes(searchValue) ||
+                    description.includes(searchValue) ||
+                    seller.includes(searchValue) ||
+                    tags.includes(searchValue)
                 )
             })
 
@@ -25,6 +32,6 @@ export const setupListings = async () => {
         })
     } catch (error) {
         console.error(error);
-        container.innerHTML = `<p class="text-alert-red">Could not load listings.</p>`;
+        container.innerHTML = `<p class="text-alert-red">Could not load listings.</p>`
     }
 }
