@@ -19,34 +19,49 @@
   </head>
   <body class="flex min-h-dvh flex-col bg-black font-sans text-white">
     <header
-      class="border-light-grey relative border-b-[0.5px] bg-black text-white"
+      class="border-light-grey relative border-b-[0.5px] bg-black"
     >
       <nav class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
-          <h1 class="font-heading text-neon-green text-2xl font-bold">
-            BidStack
+          <h1 class="font-heading text-neon-green text-2xl font-bold"><a href="/">BidStack</a> 
           </h1>
           <ul class="hidden items-center gap-6 md:flex">
             <li><a href="/" class="hover:underline">Home</a></li>
-            <li>
-              <a href="/listings" class="hover:underline">View listings</a>
+            <li><a href="/listings" class="hover:underline">Listings</a></li>
+          
+            <li class="auth-logged-out">
+              <a href="/login" class="hover:underline btn">Login</a>
             </li>
-            <li><a href="/login" class="hover:underline">Login</a></li>
-            <button class="btn-secondary logout-btn">Logout</button>
+          
+            <li class="auth-logged-out">
+              <a href="/login" class="btn-secondary">Register</a>
+            </li>
+          
+            <li class="auth-logged-in hidden">
+              <a href="/profile" class="hover:underline">Profile</a>
+            </li>
+          
+            <li class="auth-logged-in hidden">
+              <button class="open-create-listing btn">Add listing</button>
+            </li>
+          
+            <li class="auth-logged-in hidden">
+              <button class="btn-secondary logout-btn">Logout</button>
+            </li>
           </ul>
-          <button
+          <div class="flex gap-3"><p class="user-credits text-light-green text-right"></p><button
             id="menu-btn"
             class="z-50 text-sm text-white focus:outline-none md:hidden"
           >
             <i id="menu-icon" class="fa-solid fa-bars"></i>
-          </button>
+          </button></div>
+          
         </div>
       </nav>
       <ul
         id="menu"
         class="text-light-grey border-light-grey absolute top-full left-0 z-40 hidden w-full flex-col border-b-[0.5px] bg-black p-2 md:hidden"
       >
-        <p class="text-light-green text-right">$1000</p>
         <div class="pb-4 text-center">
           <li>
             <a href="/" class="block hover:underline">Home</a>
@@ -54,19 +69,22 @@
           <li>
             <a href="/listings" class="block hover:underline">Listings</a>
           </li>
-          <li>
-            <a href="/non-existent-page" class="block hover:underline"
-              >Page not found</a
-            >
-            
-          </li>
+          <li><a href="/profile" class="auth-logged-in hidden">
+            Profile
+          </a></li>
         </div>
         <div class="flex flex-row justify-between">
-          <button class="btn">Add listing</button>
+          <button class="open-create-listing auth-logged-in hidden btn">
+            Add listing
+          </button>
           <div class="flex flex-row gap-2">
-            <button class="btn">Login</button>
-            <button class="btn-secondary">Register</button>
-            <button class="btn-secondary logout-btn">Logout</button>
+            <a href="/login" class="auth-logged-out btn text-white">Login</a>
+            <a href="/login" class="auth-logged-out btn-secondary text-white">
+              Register
+            </a>
+            <button class="auth-logged-in hidden btn-secondary logout-btn">
+              Logout
+            </button>
           </div>
         </div>
       </ul>
@@ -78,8 +96,8 @@
     >
       <div class="flex flex-col gap-1">
         <a href="/">Home</a>
-        <a href="">My profile</a>
-        <a href=""></a>View all listings
+        <a href="/profile">My profile</a>
+        <a href="/listings"></a>View all listings
       </div>
       <div class="flex flex-col gap-1">
         <p>About us</p>
