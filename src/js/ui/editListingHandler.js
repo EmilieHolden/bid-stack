@@ -32,7 +32,7 @@ export const setupEditListingHandler = (listings) => {
         });
     });
 
-    closeBtn?.addEventListener("click", () => dialog.close());
+    closeBtn?.addEventListener("click", () => dialog.close())
 
     form.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -45,7 +45,7 @@ export const setupEditListingHandler = (listings) => {
             description: formData.get("description"),
         };
 
-        const imageUrl = formData.get("imageUrl");
+        const imageUrl = formData.get("imageUrl")
 
         if (imageUrl) {
             listingData.media = [

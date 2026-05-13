@@ -1,17 +1,17 @@
 import { bidCard } from "../components/index.js";
 
-export function renderListing(listing) {
-  const container = document.getElementById("listing-container");
+export const renderListing = (listing) => {
+  const container = document.getElementById("listing-container")
 
   if (!container) return;
 
-  const imageUrl = listing.media?.[0]?.url || "https://placehold.co/600x400";
-  const imageAlt = listing.media?.[0]?.alt || listing.title;
+  const imageUrl = listing.media?.[0]?.url || "https://placehold.co/600x400"
+  const imageAlt = listing.media?.[0]?.alt || listing.title
 
   const highestBid =
     listing.bids?.length > 0
       ? Math.max(...listing.bids.map((bid) => bid.amount))
-      : 0;
+      : 0
 
   const bidsHtml =
     listing.bids?.length > 0
@@ -23,11 +23,11 @@ export function renderListing(listing) {
                 <p class="text-light-grey">
                   No bids yet.
                 </p>
-              `;
+              `
 
   container.innerHTML = `
       <a href="/listings" class="mb-4 block text-sm text-purple-300 hover:underline">
-        ← Back to listings
+        <i class="fa-light fa-arrow-left"></i> Back to listings
       </a>
   
       <h1 class="font-heading mb-6 text-3xl font-bold text-white">
@@ -61,7 +61,7 @@ export function renderListing(listing) {
           </div>
   
           <div>
-          <h2 class="font-heading mb-4 text-2xl font-bold text-white">Active bids</h2>
+          <h3 class="font-heading mb-4 text-xl font-bold text-white">Active bids</h3>
           <div class="flex flex-col gap-3">${bidsHtml}</div>
           </div>
         </div>
@@ -69,6 +69,7 @@ export function renderListing(listing) {
          <input type="number" name="amount" required class="input flex-1" placeholder="Your bid"/>
          <button type="submit" class="btn">Place bid</button>
         </form>
+        <p id="bid-message" class="text-sm text-alert-red"></p>
       </section>
-    `;
+    `
 }

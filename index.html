@@ -18,44 +18,45 @@
     <title>BidStack</title>
   </head>
   <body class="flex min-h-dvh flex-col bg-black font-sans text-white">
-    <header
-      class="border-light-grey relative border-b-[0.5px] bg-black"
-    >
+    <header class="border-light-grey relative border-b-[0.5px] bg-black">
       <nav class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
-          <h1 class="font-heading text-neon-green text-2xl font-bold"><a href="/">BidStack</a> 
+          <h1 class="font-heading text-neon-green text-2xl font-bold">
+            <a href="/">BidStack</a>
           </h1>
           <ul class="hidden items-center gap-6 md:flex">
             <li><a href="/" class="hover:underline">Home</a></li>
             <li><a href="/listings" class="hover:underline">Listings</a></li>
-          
+
             <li class="auth-logged-out">
-              <a href="/login" class="hover:underline btn">Login</a>
+              <a href="/login" class="btn hover:underline">Login</a>
             </li>
-          
+
             <li class="auth-logged-out">
               <a href="/login" class="btn-secondary">Register</a>
             </li>
-          
+
             <li class="auth-logged-in hidden">
               <a href="/profile" class="hover:underline">Profile</a>
             </li>
-          
+
             <li class="auth-logged-in hidden">
               <button class="open-create-listing btn">Add listing</button>
             </li>
-          
+
             <li class="auth-logged-in hidden">
               <button class="btn-secondary logout-btn">Logout</button>
             </li>
           </ul>
-          <div class="flex gap-3"><p class="user-credits text-light-green text-right"></p><button
-            id="menu-btn"
-            class="z-50 text-sm text-white focus:outline-none md:hidden"
-          >
-            <i id="menu-icon" class="fa-solid fa-bars"></i>
-          </button></div>
-          
+          <div class="flex gap-3">
+            <p class="user-credits text-light-green text-right"></p>
+            <button
+              id="menu-btn"
+              class="z-50 text-sm text-white focus:outline-none md:hidden"
+            >
+              <i id="menu-icon" class="fa-solid fa-bars"></i>
+            </button>
+          </div>
         </div>
       </nav>
       <ul
@@ -69,12 +70,12 @@
           <li>
             <a href="/listings" class="block hover:underline">Listings</a>
           </li>
-          <li><a href="/profile" class="auth-logged-in hidden">
-            Profile
-          </a></li>
+          <li>
+            <a href="/profile" class="auth-logged-in hidden"> Profile </a>
+          </li>
         </div>
         <div class="flex flex-row justify-between">
-          <button class="open-create-listing auth-logged-in hidden btn">
+          <button class="open-create-listing auth-logged-in btn hidden">
             Add listing
           </button>
           <div class="flex flex-row gap-2">
@@ -82,7 +83,7 @@
             <a href="/login" class="auth-logged-out btn-secondary text-white">
               Register
             </a>
-            <button class="auth-logged-in hidden btn-secondary logout-btn">
+            <button class="auth-logged-in btn-secondary logout-btn hidden">
               Logout
             </button>
           </div>
