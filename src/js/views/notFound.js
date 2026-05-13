@@ -1,4 +1,4 @@
 export function notFoundView() {
-    return '<h1>404 - Page Not Found</h1>';
+    return '<h2>404 - Page Not Found</h2>';
 }
 

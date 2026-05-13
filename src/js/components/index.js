@@ -1,3 +1,5 @@
 export * from "./authToggle.js"
 export * from "./loginForm.js"
 export * from "./registerForm.js"
+export * from "./profileCard.js"
+export * from "./bidCard.js"
