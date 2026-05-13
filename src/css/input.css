@@ -11,7 +11,7 @@
   --color-dark-purple: #8474df;
   --color-light-purple: #b5abec;
 
-  --color-dark-grey: #585858;
+  --color-dark-grey: #121212;
   --color-light-grey: #9b9b9b;
 
   --color-alert-red: #b80d11;
@@ -20,11 +20,11 @@
 
 @layer base {
   h2 {
-  font-family: var(--font-heading);
+    font-family: var(--font-heading);
   }
 
   button {
-    color: white; 
+    color: white;
   }
 
   .btn {
@@ -67,7 +67,8 @@
     border: 0.5px solid var(--color-light-grey);
   }
 
-  button, a {
+  button,
+  a {
     cursor: pointer;
   }
 }
