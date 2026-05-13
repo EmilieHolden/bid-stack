@@ -1,7 +1,7 @@
 import { BASE_URL } from "./index.js";
 
 export async function getListings() {
-    const response = await fetch(`${BASE_URL}/listings?_bids=true`);
+    const response = await fetch(`${BASE_URL}/listings?_bids=true&_seller=true&sort=created&sortOrder=desc`);
 
     const data = await response.json();
 

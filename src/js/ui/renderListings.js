@@ -1,18 +1,18 @@
 export function renderListings(listings) {
-    const container = document.getElementById("listings-container");
+  const container = document.getElementById("listings-container");
 
-    if (!container) return;
+  if (!container) return;
 
-    container.innerHTML = "";
+  container.innerHTML = "";
 
-    listings.forEach((listing) => {
+  listings.forEach((listing) => {
 
-        const highestBid =
-            listing.bids?.length > 0
-                ? Math.max(...listing.bids.map((bid) => bid.amount))
-                : 0;
+    const highestBid =
+      listing.bids?.length > 0
+        ? Math.max(...listing.bids.map((bid) => bid.amount))
+        : 0;
 
-        container.innerHTML += `
+    container.innerHTML += `
         <div class="listing-card">
           <div class="w-full">
             <img 
@@ -42,11 +42,9 @@ export function renderListings(listings) {
               </p>
             </div>
   
-            <button class="btn w-full text-center">
-              View product
-            </button>
+            <a href="/listing?id=${listing.id}" class="btn w-full text-center">View product</a>
           </div>
         </div>
       `;
-    });
+  });
 }
