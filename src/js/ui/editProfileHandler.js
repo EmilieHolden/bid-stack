@@ -1,6 +1,7 @@
 import { editProfileDialog } from "../components/editProfileDialog.js";
 import { editProfile } from "../api/editProfile.js";
 import { setupProfile } from "./setupProfile.js";
+import { userFeedbackMessage } from "../components/userFeedbackMessage.js";
 
 export const setupEditProfileHandler = (profile) => {
     if (!document.getElementById("edit-profile-dialog")) {
@@ -11,7 +12,7 @@ export const setupEditProfileHandler = (profile) => {
     const openBtn = document.querySelector(".open-edit-profile")
     const closeBtn = document.getElementById("close-edit-profile")
     const form = document.getElementById("edit-profile-form")
-    const message = document.getElementById("edit-profile-message")
+    const messageContainer = document.getElementById("edit-profile-message")
 
     if (!openBtn || !dialog || !form) return
 
@@ -29,6 +30,10 @@ export const setupEditProfileHandler = (profile) => {
 
         const formData = new FormData(form)
 
+        const bannerUrl =
+            formData.get("banner") ||
+            "https://images.unsplash.com/photo-1777903675832-6da170eee699?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
         const profileData = {
             bio: formData.get("bio"),
             avatar: {
@@ -36,7 +41,7 @@ export const setupEditProfileHandler = (profile) => {
                 alt: `${profile.name} avatar`,
             },
             banner: {
-                url: formData.get("bannerUrl"),
+                url: bannerUrl,
                 alt: `${profile.name} banner`,
             },
         }
@@ -47,7 +52,10 @@ export const setupEditProfileHandler = (profile) => {
             dialog.close()
             await setupProfile()
         } catch (error) {
-            message.textContent = error.message
+            messageContainer.innerHTML = userFeedbackMessage(
+                "error",
+                error.message
+            );
         }
     })
 }

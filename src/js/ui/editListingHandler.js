@@ -2,6 +2,7 @@ import { editListingDialog } from "../components/editListingDialog.js";
 import { editListing } from "../api/editListing.js";
 import { deleteListing } from "../api/deleteListing.js";
 import { setupProfile } from "./setupProfile.js";
+import { userFeedbackMessage } from "../components/userFeedbackMessage.js";
 
 export const setupEditListingHandler = (listings) => {
     if (!document.getElementById("edit-listing-dialog")) {
@@ -12,7 +13,8 @@ export const setupEditListingHandler = (listings) => {
     const form = document.getElementById("edit-listing-form");
     const closeBtn = document.getElementById("close-edit-listing");
     const deleteBtn = document.getElementById("delete-listing-btn");
-    const message = document.getElementById("edit-listing-message");
+    const messageContainer = document.getElementById("edit-listing-message");
+
 
     document.querySelectorAll(".edit-listing-btn").forEach((button) => {
         button.addEventListener("click", (event) => {
@@ -60,11 +62,11 @@ export const setupEditListingHandler = (listings) => {
             await editListing(id, listingData);
             dialog.close();
 
-            alert("Listing edited successfully.")
+            alert("Listing edited successfully.");
 
             await setupProfile();
         } catch (error) {
-            message.textContent = error.message;
+            messageContainer.innerHTML = userFeedbackMessage("error", error.message);
         }
     });
 
@@ -74,14 +76,14 @@ export const setupEditListingHandler = (listings) => {
         if (!id) return;
 
         try {
-            await deleteListing(id)
-            dialog.close()
+            await deleteListing(id);
+            dialog.close();
 
-            alert("Listing deleted successfully.")
+            alert("Listing deleted successfully.");
 
-            await setupProfile()
+            await setupProfile();
         } catch (error) {
-            message.textContent = error.message;
+            messageContainer.innerHTML = userFeedbackMessage("error", error.message);
         }
-    }
-}
+    };
+};

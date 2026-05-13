@@ -3,15 +3,11 @@ export function renderProfile(profile, isOwnProfile) {
 
   if (!container) return
 
-  const avatarUrl = profile.avatar?.url || "https://placehold.co/200x200"
-  const avatarAlt = profile.avatar?.alt || profile.name
+  const avatarUrl = profile.avatar?.url
+  const avatarAlt = profile.avatar?.alt || ""
 
-  const bannerUrl =
-    profile.banner?.url ||
-    "https://placehold.co/1200x300"
-
-  const bannerAlt =
-    profile.banner?.alt || `${profile.name} banner`
+  const bannerUrl = profile.banner?.url
+  const bannerAlt = profile.banner?.alt || `${profile.name} banner`
 
   const listingsHtml =
     profile.listings?.length > 0

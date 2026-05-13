@@ -14,7 +14,7 @@ export function loginForm() {
             <input type="password" id="login-password" name="password" minlength="8" required class="input"/>
           </div>
          
-          <p id="login-message" class="text-sm text-white"></p>
+          <div id="login-message"></div>
 
           <button type="submit" class="btn-secondary">Login</button>
         </form>

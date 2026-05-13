@@ -1,4 +1,5 @@
 import { loginUser } from "../api/login.js";
+import { userFeedbackMessage } from "../components/userFeedbackMessage.js";
 
 export function setupLoginHandler() {
     const loginForm = document.getElementById("login-form");
@@ -25,7 +26,10 @@ export function setupLoginHandler() {
             history.pushState({}, "", "/listings");
             window.dispatchEvent(new PopStateEvent("popstate"));
         } catch (error) {
-            messageContainer.textContent = error.message;
+            messageContainer.innerHTML = userFeedbackMessage(
+                "error",
+                error.message
+            );
         }
     });
 }

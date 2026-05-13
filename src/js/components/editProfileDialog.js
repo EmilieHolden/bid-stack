@@ -1,5 +1,5 @@
 export const editProfileDialog = () => {
-    return `
+  return `
       <dialog id="edit-profile-dialog" class="fixed inset-0 z-[9999] m-auto w-[90%] max-w-xl rounded-2xl bg-black p-6 text-white backdrop:bg-black/70">
         <form id="edit-profile-form" class="flex w-full flex-col gap-4">
           <div class="flex items-center justify-between">
@@ -22,7 +22,7 @@ export const editProfileDialog = () => {
             <textarea id="edit-bio" name="bio" class="input min-h-28"></textarea>
           </div>
   
-          <p id="edit-profile-message" class="text-sm"></p>
+          <div id="edit-profile-message"></div>
   
           <button type="submit" class="btn w-fit">
             Save changes
