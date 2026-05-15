@@ -35,6 +35,7 @@ export class Router {
         if (path === "/") {
             console.log("Running home handler");
             setupGoToListingsHandler()
+            setupProfile()
         }
 
         if (path === "/login") {
