@@ -22,10 +22,22 @@ const router = new Router(routes, contentElement)
 
 router.resolveRoute()
 
-document.querySelectorAll('nav a').forEach((link) => {
+/*document.querySelectorAll('nav a').forEach((link) => {
   link.addEventListener('click', (event) => {
     event.preventDefault()
     const path = event.target.getAttribute('href')
     router.navigate(path)
   })
+})*/
+
+document.addEventListener("click", (event) => {
+  const link = event.target.closest("a[data-link]")
+
+  if (!link) return
+
+  event.preventDefault()
+
+  const path = link.getAttribute("href")
+
+  router.navigate(path)
 })

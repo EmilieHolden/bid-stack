@@ -22,22 +22,24 @@
       <nav class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <h1 class="font-heading text-neon-green text-2xl font-bold">
-            <a href="/">BidStack</a>
+            <a href="/" data-link>BidStack</a>
           </h1>
           <ul class="hidden items-center gap-6 md:flex">
-            <li><a href="/" class="hover:underline">Home</a></li>
-            <li><a href="/listings" class="hover:underline">Listings</a></li>
-
-            <li class="auth-logged-out">
-              <a href="/login" class="btn hover:underline">Login</a>
+            <li><a href="/" class="hover:underline" data-link>Home</a></li>
+            <li>
+              <a href="/listings" class="hover:underline" data-link>Listings</a>
             </li>
 
             <li class="auth-logged-out">
-              <a href="/login" class="btn-secondary">Register</a>
+              <a href="/login" class="btn hover:underline" data-link>Login</a>
+            </li>
+
+            <li class="auth-logged-out">
+              <a href="/login" class="btn-secondary" data-link>Register</a>
             </li>
 
             <li class="auth-logged-in hidden">
-              <a href="/profile" class="hover:underline">Profile</a>
+              <a href="/profile" class="hover:underline" data-link>Profile</a>
             </li>
 
             <li class="auth-logged-in hidden">
@@ -45,7 +47,7 @@
             </li>
 
             <li class="auth-logged-in hidden">
-              <button class="btn-secondary logout-btn">Logout</button>
+              <button class="btn-secondary logout-btn" data-link>Logout</button>
             </li>
           </ul>
           <div class="flex gap-3">
@@ -65,13 +67,17 @@
       >
         <div class="pb-4 text-center">
           <li>
-            <a href="/" class="block hover:underline">Home</a>
+            <a href="/" class="block hover:underline" data-link>Home</a>
           </li>
           <li>
-            <a href="/listings" class="block hover:underline">Listings</a>
+            <a href="/listings" class="block hover:underline" data-link
+              >Listings</a
+            >
           </li>
           <li>
-            <a href="/profile" class="auth-logged-in hidden"> Profile </a>
+            <a href="/profile" class="auth-logged-in hidden" data-link>
+              Profile
+            </a>
           </li>
         </div>
         <div class="flex flex-row justify-between">
@@ -79,8 +85,14 @@
             Add listing
           </button>
           <div class="flex flex-row gap-2">
-            <a href="/login" class="auth-logged-out btn text-white">Login</a>
-            <a href="/login" class="auth-logged-out btn-secondary text-white">
+            <a href="/login" class="auth-logged-out btn text-white" data-link
+              >Login</a
+            >
+            <a
+              href="/login"
+              class="auth-logged-out btn-secondary text-white"
+              data-link
+            >
               Register
             </a>
             <button class="auth-logged-in btn-secondary logout-btn hidden">
@@ -96,9 +108,9 @@
       class="text-light-grey border-light-grey flex justify-between border-t-[0.5px] px-4 pt-6 pb-8"
     >
       <div class="flex flex-col gap-1">
-        <a href="/">Home</a>
-        <a href="/profile">My profile</a>
-        <a href="/listings"></a>View all listings
+        <a href="/" data-link>Home</a>
+        <a href="/profile" data-link>My profile</a>
+        <a href="/listings" data-link></a>View all listings
       </div>
       <div class="flex flex-col gap-1">
         <p>About us</p>
