@@ -9,6 +9,7 @@ import { notFoundView } from './views/index.js';
 import { setupProfile } from './ui/setupProfile.js';
 import { setupAuthNav } from './ui/authNav.js';
 import { setupGoToListingsHandler } from './ui/goToListingsHandler.js';
+import { setupNavLinkHandler } from './ui/navLinkHandler.js';
 
 export class Router {
     constructor(routes, contentElement) {
@@ -31,11 +32,10 @@ export class Router {
         setupAuthNav()
         setupLogoutHandler()
         setupCreateListingDialog()
+        setupNavLinkHandler()
 
         if (path === "/") {
-            console.log("Running home handler");
             setupGoToListingsHandler()
-            setupProfile()
         }
 
         if (path === "/login") {
