@@ -33,6 +33,7 @@ export class Router {
         setupCreateListingDialog()
 
         if (path === "/") {
+            console.log("Running home handler");
             setupGoToListingsHandler()
         }
 
