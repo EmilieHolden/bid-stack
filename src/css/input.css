@@ -28,14 +28,20 @@
   }
 
   .btn {
-    display: flex;
     width: fit-content;
-    align-items: flex-start;
     gap: 12px;
     padding: 4px 10px;
 
     border-radius: 5px;
     border: 1px solid #8474df;
+  }
+
+  .icon-trash-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 12px;
   }
 
   .btn-secondary {
@@ -45,6 +51,11 @@
 
     border-radius: 5px;
     background: #8474df;
+  }
+
+  button:disabled {
+    opacity: 50%;
+    cursor: not-allowed;
   }
 
   .listing-card {

@@ -20,7 +20,7 @@ export function renderListings(listings) {
     container.innerHTML += `
         <div class="listing-card">
           <div class="w-full">
-            <img 
+            <img class="h-45 w-full rounded-xl object-cover" 
               src="${listing.media?.[0]?.url || "https://placehold.co/600x400"}" 
               alt="${listing.media?.[0]?.alt || listing.title}"
             >
@@ -28,16 +28,16 @@ export function renderListings(listings) {
   
           <div class="flex w-full flex-col px-3 py-2">
             <div>
-              <p class="font-heading text-sm text-white">
+              <p class="font-heading break-words text-sm text-white">
                 ${listing.title}
               </p>
             </div>
   
-            <p class="text-light-grey text-xs">
+            <p class="text-light-grey text-xs break-words line-clamp-2">
               ${listing.description || "No description"}
             </p>
   
-            <div>
+            <div class="my-1">
               <p class="text-light-grey text-xs">Current bid</p>
               <p class="text-xl text-white">
                 $${highestBid}
@@ -47,7 +47,7 @@ export function renderListings(listings) {
               </p>
             </div>
   
-            <a href="/listing?id=${listing.id}" class="btn w-full text-center">View product</a>
+            <a href="/listing?id=${listing.id}" class="btn w-max">View product</a>
           </div>
         </div>
       `;
