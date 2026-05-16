@@ -21,7 +21,7 @@ export function renderListings(listings) {
         <div class="listing-card">
           <div class="w-full">
             <img class="h-45 w-full rounded-xl object-cover" 
-              src="${listing.media?.[0]?.url || "https://placehold.co/600x400"}" 
+              src="${listing.media?.[0]?.url || "https://placehold.co/600x400?text=No+image+found"}" 
               alt="${listing.media?.[0]?.alt || listing.title}"
             >
           </div>
@@ -47,7 +47,7 @@ export function renderListings(listings) {
               </p>
             </div>
   
-            <a href="/listing?id=${listing.id}" class="btn w-max">View product</a>
+            <a href="/listing?id=${listing.id}" class="btn w-max" data-link>View product</a>
           </div>
         </div>
       `;
