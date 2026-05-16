@@ -44,7 +44,7 @@ export const renderListing = (listing) => {
         `;
 
   container.innerHTML = `
-    <a href="/listings" class="mb-4 block text-sm text-purple-300 hover:underline">
+    <a href="/listings" class="mb-4 block text-sm text-purple-300 hover:underline" data-link>
       <i class="fa-light fa-arrow-left"></i> Back to listings
     </a>
 
@@ -75,7 +75,7 @@ export const renderListing = (listing) => {
           <p class="mb-6 text-lg text-white">
             ${listing.description || "No description"}
           </p>
-          <a href="/profile?name=${listing.seller?.name}">
+          <a href="/profile?name=${listing.seller?.name}" data-link>
             Posted by ${listing.seller?.name || "Unknown seller"}
           </a>
 
