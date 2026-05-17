@@ -1,4 +1,4 @@
-export function renderProfile(profile, isOwnProfile) {
+export const renderProfile = (profile, bids, isOwnProfile) => {
   const container = document.getElementById("profile-container");
 
   if (!container) return
@@ -14,21 +14,30 @@ export function renderProfile(profile, isOwnProfile) {
       ? profile.listings
         .map(
           (listing) => `
-                <article class="listing-card flex flex-col gap-2 profile-listing p-2" data-id="${listing.id}">
-                  <h2 class="font-heading text-white">
+                <article class="listing-card profile-listing" data-id="${listing.id}">
+                <div class="w-full">
+            <img class="h-45 w-full rounded-xl object-cover" 
+              src="${listing.media?.[0]?.url || "https://placehold.net/600x600.png"}" 
+              alt="${listing.media?.[0]?.alt || listing.title}">
+              </div>
+          <div class="flex w-full flex-col px-3 py-2 justify-between">
+          <div>
+          <h3 class="font-heading text-white text-sm break-words">
                     ${listing.title}
-                  </h2>
+                  </h3>
   
-                  <p class="text-light-grey text-sm">
+                  <p class="text-light-grey text-sm break-words line-clamp-2">
                     ${listing.description || "No description"}
-                  </p>
-                  <div class="flex">
+                  </p></div>
+         
+                  <div>
                   ${isOwnProfile
               ? `<button class="edit-listing-btn btn-secondary text-xs" data-id="${listing.id}">Edit listing
                                   </button>`
-              : ""
+              : '<a href="/listing?id=${listing.id}" class="btn w-max" data-link>View product</a>'
             }
-                  </div>  
+                  </div></div> 
+                  
                 </article>
               `
         )
@@ -39,6 +48,39 @@ export function renderProfile(profile, isOwnProfile) {
         : "This user has not created any listings yet."
       }
       </p>`
+
+  const activeBidsHtml =
+    bids?.length > 0
+      ? bids
+        .map(
+          (bid) => `
+                <article class="listing-card flex flex-col gap-2 p-2">
+                <div></div>
+                  <h2 class="font-heading text-white break-words">
+                    ${bid.listing?.title}
+                  </h2>
+  
+                  <p class="text-light-grey text-sm">
+                   ${isOwnProfile
+              ? "Your bid: $"
+              : "Active bid: $"
+            }
+                    ${bid.amount}
+                  </p>
+                  <div class="flex">
+                  <a href="/listing?id=${bid.listing?.id}" class="btn" data-link">View listing</a>
+                  </div>  
+                </article>
+              `
+        )
+        .join("")
+      : `<p class="text-light-grey">
+        ${isOwnProfile
+        ? "You don't have any active bids right now."
+        : "This user doesn't have any active bids right now."
+      }
+      </p>`
+
 
   container.innerHTML = `
       <section class="relative mb-16">
@@ -86,6 +128,13 @@ export function renderProfile(profile, isOwnProfile) {
     
         <div class="flex flex-col gap-4">
           ${listingsHtml}
+        </div>
+      </section>
+      <section>
+        <h2 class="font-heading mb-4 text-2xl font-bold text-white">Active bids</h2>
+    
+        <div class="flex flex-col gap-4">
+          ${activeBidsHtml}
         </div>
       </section>
     `

@@ -3,6 +3,7 @@ import { renderProfile } from "./renderProfile.js";
 import { setupAuthNav } from "./authNav.js";
 import { setupEditProfileHandler } from "./editProfileHandler.js";
 import { setupEditListingHandler } from "./editListingHandler.js";
+import { getProfileBids } from "../api/getProfileBids.js";
 
 export const setupProfile = async () => {
     const params = new URLSearchParams(window.location.search)
@@ -25,6 +26,7 @@ export const setupProfile = async () => {
 
     try {
         const profile = await getProfile(profileName)
+        const bids = await getProfileBids(profileName)
 
         const isOwnProfile = profile.name === ownName
 
@@ -35,12 +37,12 @@ export const setupProfile = async () => {
                     ...user,
                     ...profile,
                 })
-            );
+            )
 
             setupAuthNav()
         }
 
-        renderProfile(profile, isOwnProfile)
+        renderProfile(profile, bids, isOwnProfile)
         if (isOwnProfile) {
             setupEditProfileHandler(profile)
             setupEditListingHandler(profile.listings || [])
