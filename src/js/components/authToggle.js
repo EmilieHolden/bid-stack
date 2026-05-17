@@ -1,4 +1,4 @@
-export function authToggle() {
+export const authToggle = () => {
   return `
       <div class="border-[0.5px] border-light-grey mb-6 flex rounded-md p-1">
         <button id="show-login" type="button" class="flex-1 rounded px-4 py-2 text-sm font-medium">Login</button>
@@ -7,7 +7,7 @@ export function authToggle() {
     `;
 }
 
-export function setupAuthToggle() {
+export const setupAuthToggle = () => {
   const showRegisterBtn = document.getElementById("show-register");
   const showLoginBtn = document.getElementById("show-login");
   const registerForm = document.getElementById("register-form-wrapper");
@@ -15,7 +15,7 @@ export function setupAuthToggle() {
 
   if (!showRegisterBtn || !showLoginBtn || !registerForm || !loginForm) return;
 
-  function showRegister() {
+  const showRegister = () => {
     registerForm.classList.remove("hidden");
     loginForm.classList.add("hidden");
 
@@ -23,7 +23,7 @@ export function setupAuthToggle() {
     showLoginBtn.classList.remove("bg-ultralight-green", "text-black");
   }
 
-  function showLogin() {
+  const showLogin = () => {
     loginForm.classList.remove("hidden");
     registerForm.classList.add("hidden");
 

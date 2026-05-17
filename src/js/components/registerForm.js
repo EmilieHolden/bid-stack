@@ -1,4 +1,4 @@
-export function registerForm() {
+export const registerForm = () => {
   return `
       <div id="register-form-wrapper">
         <h2 class="mb-3 text-xl text-white font-bold font-heading">Register account</h2>

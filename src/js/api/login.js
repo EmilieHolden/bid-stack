@@ -2,7 +2,7 @@ import { getHeaders } from "./index.js";
 
 const API_URL = "https://v2.api.noroff.dev/auth/login"
 
-export async function loginUser(userData) {
+export const loginUser = async (userData) => {
     try {
         const response = await fetch(API_URL, {
             method: 'POST',

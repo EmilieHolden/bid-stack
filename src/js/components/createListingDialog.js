@@ -1,6 +1,6 @@
 import { imageUrlInput } from "./imageUrlInput.js";
 
-export function createListingDialog() {
+export const createListingDialog = () => {
   return `
     <dialog
       id="create-listing-dialog"
@@ -55,7 +55,7 @@ export function createListingDialog() {
   `;
 }
 
-export function setupCreateListingImages() {
+export const setupCreateListingImages = () => {
   const addButton = document.getElementById("add-image-field");
   const imagesContainer = document.getElementById("listing-images");
 

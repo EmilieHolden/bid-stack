@@ -5,7 +5,7 @@ import {
 import { createListing } from "../api/createListing.js";
 import { userFeedbackMessage } from "../components/userFeedbackMessage.js";
 
-export function setupCreateListingDialog() {
+export const setupCreateListingDialog = () => {
     if (!document.getElementById("create-listing-dialog")) {
         document.body.insertAdjacentHTML("beforeend", createListingDialog());
         setupCreateListingImages();

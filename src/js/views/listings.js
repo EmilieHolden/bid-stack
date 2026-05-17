@@ -1,4 +1,4 @@
-export function listingsView() {
+export const listingsView = () => {
   return `
       <main class="mx-auto w-full max-w-lg px-4 py-6">
       <h2 class="font-heading mb-6 text-3xl font-bold text-white">

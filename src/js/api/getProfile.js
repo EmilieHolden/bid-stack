@@ -1,8 +1,8 @@
 import { BASE_URL, getHeaders } from "./index.js";
 
-export async function getProfile(name) {
+export const getProfile = async (name) => {
     const response = await fetch(
-        `${BASE_URL}/profiles/${name}?_listings=true`,
+        `${BASE_URL}/profiles/${name}?_listings=true&_wins=true`,
         {
             headers: getHeaders(),
         }

@@ -1,7 +1,7 @@
 import { loginUser } from "../api/login.js";
 import { userFeedbackMessage } from "../components/userFeedbackMessage.js";
 
-export function setupLoginHandler() {
+export const setupLoginHandler = () => {
     const loginForm = document.getElementById("login-form");
     const messageContainer = document.getElementById("login-message");
 

@@ -2,7 +2,7 @@ import { getListing } from "../api/getListing.js";
 import { renderListing } from "./renderListing.js";
 import { setupBidHandler } from "./bidHandler.js";
 
-export async function setupListing() {
+export const setupListing = async () => {
     const params = new URLSearchParams(window.location.search);
 
     const id = params.get("id");

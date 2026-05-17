@@ -1,6 +1,6 @@
 import { logout } from "../utils/logout.js";
 
-export function setupLogoutHandler() {
+export const setupLogoutHandler = () => {
     const logoutButtons = document.querySelectorAll(".logout-btn");
 
     logoutButtons.forEach((button) => {

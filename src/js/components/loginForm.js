@@ -1,4 +1,4 @@
-export function loginForm() {
+export const loginForm = () => {
   return `
       <div id="login-form-wrapper" class="hidden">
         <h2 class="mb-3 text-xl font-bold font-heading">Login</h2>

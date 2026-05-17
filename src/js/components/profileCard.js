@@ -1,4 +1,4 @@
-export function profileCard(id) {
+export const profileCard = (id) => {
   return `
       <div class="rounded-xl bg-dark-grey p-5">
         <p class="font-bold text-white">

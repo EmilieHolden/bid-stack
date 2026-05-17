@@ -1,6 +1,6 @@
 import { BASE_URL, getHeaders } from "./index.js";
 
-export async function createListing(listingData) {
+export const createListing = async (listingData) => {
     const response = await fetch(`${BASE_URL}/listings`, {
         method: "POST",
         headers: getHeaders(),

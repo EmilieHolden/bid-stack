@@ -1,4 +1,4 @@
-export async function registerUser(userData) {
+export const registerUser = async (userData) => {
     const API_URL = "https://v2.api.noroff.dev/auth/register"
 
     try {

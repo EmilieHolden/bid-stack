@@ -53,7 +53,7 @@ export const editListingDialog = () => {
   `;
 };
 
-export function setupEditListingImages() {
+export const setupEditListingImages = () => {
   const addButton = document.getElementById("add-edit-image-field");
   const imagesContainer = document.getElementById("edit-listing-images");
 
