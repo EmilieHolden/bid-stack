@@ -9,7 +9,7 @@ export const renderListing = (listing) => {
 
   const media = listing.media?.length
     ? listing.media
-    : [{ url: "https://placehold.co/600x400", alt: listing.title }];
+    : [{ url: "https://placehold.net/600x600.png", alt: listing.title }];
 
   const thumbnails = media
     .map(
@@ -55,7 +55,7 @@ export const renderListing = (listing) => {
     <section class="space-y-8">
       <div class="flex flex-col gap-3">
         <img
-          src="${media[0].url}"
+          src="${media[0].url || "https://placehold.net/600x600.png"}"
           alt="${media[0].alt || listing.title}"
           class="main-listing-image max-h-[520px] w-full rounded-xl object-cover"
         />
