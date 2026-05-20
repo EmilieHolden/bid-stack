@@ -122,16 +122,16 @@ export const renderProfile = (profile, bids, isOwnProfile) => {
       </section>
     
       <section>
-        <h2 class="font-heading mb-4 text-2xl font-bold text-white">
+        <h3 class="font-heading mb-4 text-2xl font-bold text-white">
           ${isOwnProfile ? "My listings" : `${profile.name}'s listings`}
-        </h2>
+        </h3>
     
         <div class="flex flex-col gap-4">
           ${listingsHtml}
         </div>
       </section>
       <section>
-        <h2 class="font-heading mb-4 text-2xl font-bold text-white">Active bids</h2>
+        <h3 class="font-heading my-4 text-2xl font-bold text-white">Active bids</h3>
     
         <div class="flex flex-col gap-4">
           ${activeBidsHtml}
