@@ -18,7 +18,7 @@ export const renderListings = (listings) => {
         : 0;
 
     container.innerHTML += `
-        <div class="listing-card">
+        <div class="listing-card mb-2">
           <div class="w-full">
             <img class="h-45 w-full rounded-xl object-cover" 
               src="${listing.media?.[0]?.url || "https://placehold.net/600x600.png"}" 
@@ -26,12 +26,12 @@ export const renderListings = (listings) => {
             >
           </div>
   
-          <div class="flex w-full flex-col px-3 py-2">
-            <div>
+          <div class="flex w-full flex-col px-3 py-2 justify-between">
+           
               <h3 class="font-heading break-words text-sm text-white">
                 ${listing.title}
-              </>
-            </div>
+              </h3>
+           
   
             <p class="text-light-grey text-xs break-words line-clamp-2">
               ${listing.description || "No description"}
@@ -47,7 +47,7 @@ export const renderListings = (listings) => {
               </p>
             </div>
   
-            <a href="/listing?id=${listing.id}" class="btn w-max" data-link>View product</a>
+            <a href="/listing?id=${listing.id}" class="btn text-center w-full" data-link>View product</a>
           </div>
         </div>
       `;

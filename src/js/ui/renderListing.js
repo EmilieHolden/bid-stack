@@ -48,9 +48,9 @@ export const renderListing = (listing) => {
       <i class="fa-light fa-arrow-left"></i> Back to listings
     </a>
 
-    <h1 class="font-heading mb-6 text-3xl font-bold text-white">
+    <h2 class="font-heading mb-6 text-3xl font-bold text-white">
       ${listing.title}
-    </h1>
+    </h2>
 
     <section class="space-y-8">
       <div class="flex flex-col gap-3">
