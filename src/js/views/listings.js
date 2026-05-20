@@ -5,7 +5,7 @@ export const listingsView = () => {
         Listings
       </h2>
 <div>
-      <form id="search-form" class="mb-2">
+      <form id="search-form" class="mb-5">
         <label for="search-input" class="sr-only">Search listings</label>
 
         <input
@@ -16,10 +16,9 @@ export const listingsView = () => {
           class="input w-full"
         />
       </form>
-      <div class="mb-4">
   <label for="sort-select" class="text-white">Sort by</label>
 
-  <select id="sort-select" class="input w-full">
+  <select id="sort-select" class="input w-full mb-5">
     <option value="newest">Newest</option>
     <option value="ending-soon">Ending soon</option>
     <option value="highest-bid">Highest bid</option>
