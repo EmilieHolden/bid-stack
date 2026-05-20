@@ -47,7 +47,7 @@
   .btn-secondary {
     display: flex;
     align-items: flex-start;
-    padding: 8px 12px;
+    padding: 4px 10px;
 
     border-radius: 5px;
     background: #8474df;
@@ -60,10 +60,7 @@
 
   .listing-card {
     display: flex;
-
-    align-items: flex-start;
-    align-self: stretch;
-
+    flex-direction: row;
     border-radius: 5px;
     background: #121212;
   }
