@@ -2,5 +2,6 @@ export const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user")
 
-    window.location.href = "/login"
+    history.pushState({}, "", "/login")
+    window.dispatchEvent(new PopStateEvent("popstate"))
 }
