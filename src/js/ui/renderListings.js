@@ -28,7 +28,7 @@ export const renderListings = (listings) => {
   
           <div class="flex w-full flex-col px-3 py-2 justify-between">
            
-              <h3 class="font-heading break-words text-sm text-white">
+              <h3 class="font-heading break-all line-clamp-2 text-sm text-white">
                 ${listing.title}
               </h3>
            

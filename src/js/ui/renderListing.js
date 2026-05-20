@@ -48,7 +48,7 @@ export const renderListing = (listing) => {
       <i class="fa-light fa-arrow-left"></i> Back to listings
     </a>
 
-    <h2 class="font-heading mb-6 text-3xl font-bold text-white">
+    <h2 class="font-heading mb-6 text-3xl font-bold break-words text-white">
       ${listing.title}
     </h2>
 
