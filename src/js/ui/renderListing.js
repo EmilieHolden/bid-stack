@@ -85,10 +85,12 @@ export const renderListing = (listing) => {
           </p>
 
           <p class="text-light-grey mb-6 text-sm">
-            Ends: ${new Date(listing.endsAt).toLocaleDateString()}
+            Ends: ${new Date(listing.endsAt).toLocaleString([], {
+      dateStyle: "short",
+      timeStyle: "short",
+    })}
           </p>
         </div>
-
         <div>
           <h3 class="font-heading mb-4 text-xl font-bold text-white">
             Active bids

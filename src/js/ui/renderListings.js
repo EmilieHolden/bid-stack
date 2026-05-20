@@ -43,8 +43,11 @@ export const renderListings = (listings) => {
                 $${highestBid}
               </p>
               <p class="text-light-grey text-xs">
-                Ends: ${new Date(listing.endsAt).toLocaleDateString()}
-              </p>
+              Ends: ${new Date(listing.endsAt).toLocaleString([], {
+      dateStyle: "short",
+      timeStyle: "short",
+    })}
+             </p>
             </div>
   
             <a href="/listing?id=${listing.id}" class="btn text-center w-full" data-link>View product</a>
