@@ -20,12 +20,25 @@ export const registerForm = () => {
           </div>
 
           <div class="flex flex-col">
+            <label for="register-bio">Bio</label>
+            <input type="textarea" id="register-bio" name="bio" class="input"/>
+          </div>
+
+           <div class="flex flex-col">
+            <label for="avatar">Avatar URL</label>
+            <input
+              type="url"
+              id="avatar"
+              name="avatar"
+              class="input"
+            />
+          </div>
+
+          <div class="flex flex-col">
             <label for="banner">Banner URL</label>
             <input type="url" id="banner" name="banner" class="input"/>
           </div>
-
           <div id="register-message"></div>
-  
           <button type="submit" class="btn-secondary">Create account</button>
         </form>
       </div>

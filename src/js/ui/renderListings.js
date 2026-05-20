@@ -1,4 +1,4 @@
-export function renderListings(listings) {
+export const renderListings = (listings) => {
   const container = document.getElementById("listings-container");
 
   if (!container) return
@@ -21,16 +21,16 @@ export function renderListings(listings) {
         <div class="listing-card">
           <div class="w-full">
             <img class="h-45 w-full rounded-xl object-cover" 
-              src="${listing.media?.[0]?.url || "https://placehold.co/600x400?text=No+image+found"}" 
+              src="${listing.media?.[0]?.url || "https://placehold.net/600x600.png"}" 
               alt="${listing.media?.[0]?.alt || listing.title}"
             >
           </div>
   
           <div class="flex w-full flex-col px-3 py-2">
             <div>
-              <p class="font-heading break-words text-sm text-white">
+              <h3 class="font-heading break-words text-sm text-white">
                 ${listing.title}
-              </p>
+              </>
             </div>
   
             <p class="text-light-grey text-xs break-words line-clamp-2">
